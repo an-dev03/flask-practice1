@@ -15,4 +15,9 @@ li {
 }
 a       { color: #333; text-decoration: none; }
 a:hover { text-decoration: underline; }
+
+/* 
+ * "완료"를 누르면 todo['done']이 True나 False로 바뀌고, True이면 span 태그의 done 클래스가 활성화됨  
+ * done 클래스가 활성화되면 todo['text']에 취소선이 그임                                                   
+ */
 .done   { text-decoration: line-through; }
