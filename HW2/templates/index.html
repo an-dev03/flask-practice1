@@ -16,10 +16,11 @@
     <li>
         <a href="{{ url_for('toggle', index=loop.index0) }}">완료</a>
 
-        <!-- todo['done']이 True이면 span 태그의 done 클래스가 활성화됨 -> CSS에서 취소선 처리  -->
-        <span class="{% if todo.done %}done{% endif %}">
+        {% if todo.done %}
+            <span class="done">{{ todo.text }}</span>
+        {% else %}
             {{ todo.text }}
-        </span>
+        {% endif %}
 
         <a href="{{ url_for('delete', index=loop.index0) }}">Delete</a>
     </li>
