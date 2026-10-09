@@ -42,10 +42,12 @@ def delete(id):
     db.session.commit()
     return redirect(url_for('index'))
 
+# 수정 화면 추가
 @app.route('/edit/<int:id>', methods=['GET', 'POST'])
 def edit(id):
     todo = db.get_or_404(Todo, id)
     if request.method == 'POST':
+        # todo의 text와 note를 form에 있는 값으로 각각 바꿈
         todo.text = request.form['todo']
         todo.note = request.form['note']
         db.session.commit()

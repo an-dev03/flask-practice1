@@ -5,6 +5,7 @@
 {% block content %}
 <h2>할 일 수정</h2>
 <form method="post">
+    <!-- 사용자의 입력을 받되, 처음 값은 기존의 값을 보여줌: value 사용 -->
     <input type="text" name="todo" value="{{ todo.text }}" required>
     <input type="text" name="note" value="{{ todo.note }}">
     <button type="submit">저장</button>
